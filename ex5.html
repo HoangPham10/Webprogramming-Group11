@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex5</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid black;
+      }
+      .absorbing-column {
+        width: 100%;
+      }
+      .first-table {
+        border: 1px solid black;
+        border-bottom: none;
+      }
+      .first-table tr td {
+        border-top: none;
+        border-bottom: none;
+      }
+      .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="first-table">
+      <colgroup>
+        <col span="1" style="width: 80%" />
+        <col span="1" style="width: 20%" />
+      </colgroup>
+      <tr>
+        <td>Personal Details</td>
+        <td style="text-align: center">Image</td>
+      </tr>
+      <tr style="border-top: none">
+        <td>a student in Global ICT of HUST</td>
+        <td style="text-align: center">
+          <img
+            src=""
+            class="avatar"
+          />
+        </td>
+      </tr>
+    </table>
+    <table>
+      <colgroup>
+        <col span="1" style="width: 20%" />
+        <col span="1" style="width: 80%" />
+      </colgroup>
+      <tr>
+        <td>Education process</td>
+        <td>
+          <ul>
+            <li>2015 - 2018: Hai Hau A High School</li>
+            <li>2018 - Present: HUST</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Working process</td>
+        <td>
+          <ul>
+            <li>Internship at FPT Software</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Skills</td>
+        <td>
+          <ul>
+            <li>Web Programming</li>
+            <li>Mobile Programming</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Hobbies</td>
+        <td>
+          <ul>
+            <li>Programming</li>
+            <li>Football</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Desire</td>
+        <td>Become a great programming</td>
+      </tr>
+    </table>
+  </body>
+</html>
