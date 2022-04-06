@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - Update by Fantacy Design -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | Fantacy Design </title>
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="ex9.php" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Class</span>
+            <input type="text"  name="class" placeholder="Enter your class" required>
+          </div>
+          <div class="input-box">
+            <span class="details">University</span>
+            <input type="text"  name="university" placeholder="Enter your university" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+        </div>
+        <div class="gender-title">Hobbies</div>
+        <input type="checkbox" id="vehicle1" name="hobby[]" value="Play Soccer">
+        <label for="vehicle1"> Play soccer</label><br>
+        <input type="checkbox" id="vehicle2" name="hobby[]" value="Music">
+        <label for="vehicle2"> Music</label><br>
+        <input type="checkbox" id="vehicle3" name="hobby[]" value="Book">
+        <label for="vehicle3"> Book</label><br> 
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
