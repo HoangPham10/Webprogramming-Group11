@@ -46,12 +46,12 @@ create table if not exists categories
 );
 
 insert into categories(brand)
-values ('IPhone'),
+values ('MacOS'),
        ('Dell'),
-       ('Xiaomi'),
-       ('Oppo'), 
-       ('Realme'),
-       ('BlackBerry');
+       ('HP'),
+       ('ASUS'), 
+       ('Levono'),
+       ('MSI');
 
 
 create table if not exists products
@@ -75,6 +75,8 @@ create table if not exists products
     updated_at  datetime on update current_timestamp,
     foreign key (category_id) references categories (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+-- Category 01 MacOs
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Macbook Pro 16" 2021 M1 Pro Ram 32GB',6,1,'MacOS Ventura','Apple M1 Pro','32 GB','mini LED 16"','3456 x 2234 Pixels','1080p','1 TB','7756 mAh','product-1','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2799);
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Macbook Pro 16" 2021 M1 Pro 512GB  ',14,1,'MacOS Ventura','Apple M1 Pro','16 GB','mini LED 16"','3456 x 2234 Pixels','1080p','512 GB','7756 mAh','product-2','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2399);
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Macbook Pro 14" 2021 M1 Pro 512GB  ',17,1,'MacOS Ventura','Apple M1 Pro','16 GB','mini LED 14"','3024 x 1964 Pixels','1080p','512 GB','6687 mAh','product-3','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2199);
@@ -92,6 +94,7 @@ insert into products(name, quantity, category_id, os, chipset, ram, display, res
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Macbook Pro 13" 2020 M1 512GB  ',17,1,'MacOS Ventura','Apple M1','8 GB','Retina"','2560 x 1600 Pixels','720p','512 GB','5770 mAh','product-16','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1499);
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Macbook Pro 13" 2020 M1 8GB 256GB  ',14,1,'MacOS Ventura','Apple M1','8 GB','Retina','2560 x 1600 Pixels','720p','256 GB','5770 mAh','product-14','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1199);
 
+-- Category 02 Dell
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Laptop Dell Vostro 3400  ',6,2,'Win 10','i5 1135G7','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','256GB SSD','3 cell','dell-vostro-3400','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',800);
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Laptop Dell Inspiron 5415  ',14,2,'Win 10','R5 5500U','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','256 GB','3 cell','laptop-dell-inspiron-5415','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',900);
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Laptop Dell Vostro 5410  ',14,2,'Win 10','i5 - 11320H','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512 GB','4 cell','laptop-dell-vostro-5410','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1000);
@@ -101,54 +104,214 @@ insert into products(name, quantity, category_id, os, chipset, ram, display, res
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Laptop Dell G15 Ryzen Edition 5515   ',14,2,'Win 11','R7 5800H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512 GB','3 cell','laptop-dell-g15-ryzen-edition-5515','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1500);
 insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Laptop Dell Latitude 3420   ',14,2,'Win 11 Pro','i5-1135G7','8 GB','14 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','256 GB','3 cell','image-removebg-preview','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',950);
 
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy A32 ',18,2,'Android 11','MediaTek Helio G80 8 nhân','6 GB','Super AMOLED 6.4','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 8 MP, 5MP, 5MP, 20 MP','128 GB','5000 mAh','product-17','Bảo hành chính hãng 12 tháng. Bao xài đổi trả trong 15 ngày.',246);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy S21 Ultra 256GB 5G ',12,2,'Android 11','Exynos 2100 8 nhân','12 GB','Dynamic AMOLED 2X 6.8','2K+ (1440 x 3200 Pixels)','Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP, 40 MP','256 GB','5000 mAh','product-18','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong vòng 15 ngày đầu.',1067);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy S21 Ultra 128GB 5G ',18,2,'Android 11','Exynos 2100 8 nhân','12 GB','Dynamic AMOLED 2X 6.8','2K+ (1440 x 3200 Pixels)','Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP, 40 MP','128 GB','5000 mAh','product-19','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong vòng 15 ngày đầu.',950);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy S21 Plus 128GB 5G ',23,2,'Android 11','Exynos 2100 8 nhân','8 GB','Dynamic AMOLED 2X 6.7','Full HD+ (1080 x 2400 Pixels)','Chính 12 MP & Phụ 64 MP, 12 MP, 10 MP','128 GB','4800 mAh','product-20','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong vòng 15 ngày đầu.',745);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy S21 Plus 256GB 5G ',13,2,'Android 11','Exynos 2100 8 nhân','8 GB','Dynamic AMOLED 2X 6.7','Full HD+ (1080 x 2400 Pixels)','Chính 12 MP & Phụ 64 MP, 12 MP, 10 MP','256 GB','4800 mAh','product-21','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong vòng 15 ngày đầu.',825);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy A12 ',20,2,'Android 10','MediaTek Helio G35 8 nhân','4 GB','PLS TFT LCD','HD+ (720 x 1600 Pixels)','Chính 48 MP & Phụ 5 MP, 2 MP, 2 MP, 8 MP','128 GB','5000 mAh','product-22','Bảo hành chính hãng 12 tháng. Bao xài đổi trả 15 ngày đầu.',151);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy Note 20 Ultra ',6,2,'Android 10','Exynos 990 8 nhân','8 GB','Dynamic AMOLED 2X','2K+ (1440 x 3088 Pixels)','Chính 108 MP & Phụ 12 MP, 12 MP, cảm biến Laser AF, 10 MP','256 GB','4500 mAh','product-23','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong vòng 15 ngày đầu.',803);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy A52 ',12,2,'Android 11','Snapdragon 720G 8 nhân','8 GB','Super AMOLED','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 12 MP, 5 MP, 5 MP, 32 MP','128 GB','4500 mAh','product-24','Bảo hành chính hãng 12 tháng. Bao xài đổi trả trong 15 ngày.',336);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy A72 ',10,2,'Android 11','Snapdragon 720G 8 nhân','8 GB','Super AMOLED 6.7','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 12 MP, 8 MP, 5 MP, 32 MP','256 GB','5000 mAh','product-25','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong vòng 15 ngày đầu.',425);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy A02s 4GB/64GB ',13,2,'Android 10','Snapdragon 450 8 nhân','4 GB','PLS TFT LCD 6.5','HD+ (720 x 1600 Pixels)','Chính 13 MP & Phụ 2 MP, 2 MP, 5 MP','64 GB','5000 mAh','product-26','Bảo hành chính hãng 12 tháng. Bao xài đổi trả trong 15 ngày đầu.',129);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Samsung Galaxy S20 FE 256GB ',17,2,'Android 11','Snapdragon 865 8 nhân','8 GB','Super AMOLED','Full HD+ (1080 x 2400 Pixels)','Chính 12 MP & Phụ 12 MP, 8 MP, 32 MP','256 GB','4500 mAh','product-27','Bảo hành 12 tháng chính hãng. bao xài đổi trả trong vòng 15 ngày đầu.',608);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Redmi Note 10 6GB/128GB ',15,3,'Android 11','Snapdragon 678 8 nhân','6 GB','AMOLED 6.43','Full HD+ (1080 x 2400 Pixels)','Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP, 13 MP','128 GB','5000 mAh','product-28','Bảo hành chính hãng 18 tháng. Bao xài đổi trả trong 15 ngày.',195);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Mi 10T Pro 5G - 8GB/128GB',18,3,'Android 10','Snapdragon 865 8 nhân','8 GB','IPS LCD 6.67','Full HD+ (1080 x 2440 Pixels), Tần số quét 144Hz','Chính 108 MP & Phụ 13 MP, 5 MP, 20 MP','128 GB','5000 mAh','product-29','Bảo hành 24 tháng chính hãng, bao xài đổi trả trong 15 ngày đầu.',433);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Mi 10T Pro 5G - 8GB/256GB',7,3,'Android 10','Snapdragon 865 8 nhân','8 GB','IPS LCD 6.67','Full HD+ (1080 x 2440 Pixels), Tần số quét 144Hz','Chính 108 MP & Phụ 13 MP, 5 MP, 20 MP','256 GB','5000 mAh','product-30','Bảo hành 24 tháng chính hãng, bao xài đổi trả trong 15 ngày đầu.',476);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Redmi 9T 4GB/64GB  DGW',7,3,'Android 10','Snapdragon 662 8 nhân','4 GB','IPS LCD','Full HD+ (1080 x 2340 Pixels)','Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP, 8 MP','64 GB','6000 mAh','product-31','Bảo hành chính hãng 18 tháng. Bao xài đổi trả trong 15 ngày đầu.',156);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Redmi Note 10S ',14,3,'Android 11','MediaTek Helio G95 8 nhân','8 GB','AMOLED','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP, 13 MP','128 GB','5000 mAh','product-32','Bảo hành chính hãng 18 tháng. Bao xài đổi trả trong 15 ngày đầu.',282);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Redmi Note 10 5G ',21,3,'Android 11','MediaTek Dimensity 700 8 nhân','4 GB','IPS LCD','Full HD+ (1080 x 2400 Pixels)','Chính 48 MP & Phụ 2 MP, 2 MP, 8 MP','128 GB','5000 mAh','product-33','Bảo hành chính hãng 18 tháng. Bao xài đổi trả trong 15 ngày đầu.',216);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Redmi Note 10 Pro 8GB/128GB  Phiên bản MiFan Edition ',17,3,'Android 11','Snapdragon 732G','8 GB','AMOLED','Full HD+ (1080 x 2400 Pixels)','Chính 108 MP & Phụ 8 MP, 5 MP, 2 MP, 16 MP','128 GB','5020 mAh','product-34','Bảo hành chính hãng 18 tháng. Bao xài đổi trả trong 15 ngày đầu.',295);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Redmi Note 10 Pro 6GB/128GB ',23,3,'Android 11','Snapdragon 732G 8 nhân','6 GB','AMOLED 6.67','Full HD+ (1080 x 2400 Pixels)','Chính 108 MP & Phụ 8 MP, 5 MP, 2 MP, 16 MP','128 GB','5020 mAh','product-35','Bảo hành chính hãng 18 tháng. Bao xài đổi trả trong 15 ngày.',273);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Redmi Note 10 Pro 8GB/128GB ',18,3,'Android 11','Snapdragon 732G 8 nhân','8 GB','AMOLED 6.67','Full HD+ (1080 x 2400 Pixels)','Chính 108 MP & Phụ 8 MP, 5 MP, 2 MP, 16 MP','128 GB','5020 mAh','product-36','Bảo hành chính hãng 18 tháng. Bao xài đổi trả trong 15 ngày.',295);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Xiaomi Redmi Note 10 4GB/64GB ',21,3,'Android 11','Snapdragon 678 8 nhân','4 GB','AMOLED 6.43','Full HD+ (1080 x 2400 Pixels)','Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP, 13 MP','64 GB','5000 mAh','product-37','Bảo hành chính hãng 18 tháng. Bao xài đổi trả trong 15 ngày.',169);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('OPPO Reno5 ',5,4,'Android 11','Snapdragon 720G 8 nhân','8 GB','AMOLED 6.43','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP, 44 MP','128 GB','4310 mAh','product-38','Bảo hành chính hãng 12 tháng. Bao xài đổi trả 15 ngày đầu.',377);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Oppo A74 8G/128G',10,4,'Android 11','Snapdragon 662 8 nhân','8 GB','AMOLED','Full HD+ (1080 x 2400 Pixels)','Chính 48 MP & Phụ 2 MP, 2 MP, 16 MP','128 GB','5000 mAh','product-39','Bảo hành 12 tháng chính hãng',290);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('OPPO Find X3 Pro 5G ',11,4,'Android 11','Snapdragon 888 8 nhân','12 GB','AMOLED','Đang cập nhật','Đang cập nhật, 32 MP','256 GB','4500 mAh','product-40','Bảo hành 12 tháng chính hãng',1173);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('OPPO A54 ',19,4,'Android 10','MediaTek Helio P35 8 nhân','4 GB','IPS LCD','HD+ (720 x 1600 Pixels)','Chính 13 MP & Phụ 2 MP, 2 MP, 16 MP','128 GB','5000 mAh','product-41','Bảo hành chính hãng 12 tháng. Bao xài đổi trả trong 15 ngày đầu.',182);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('OPPO A94 ',9,4,'Android 11','MediaTek Helio P95 8 nhân','8 GB','OLED 6.4','Full HD+ (1080 x 2400 Pixels)','Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP, 16 MP','128 GB','4310 mAh','product-42','THÔNG TIN BẢO HÀNH',334);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('OPPO Reno5 5G ',15,4,'Android 11','Snapdragon 765G 8 nhân','8 GB','AMOLED 6.43','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP, 32 MP','128 GB','4300 mAh','product-43','THÔNG TIN BẢO HÀNH',441);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('OPPO A15s ',20,4,'Android 10','MediaTek Helio P35 8 nhân','4 GB','LCD 6.52','HD+ (720 x 1600 Pixels)','Chính 13 MP & Phụ 2 MP, 2 MP, 8 MP','64 GB','4230 mAh','product-44','Bảo hành 12 tháng chính hãng',173);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Oppo A93 - 8GB/128GB ',21,4,'Android 10','MediaTek Helio P95 8 nhân','8 GB','AMOLED','Full HD+ (1080 x 2400 Pixels)','Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP, Chính 16 MP & Phụ 2 MP','128 GB','4000 mAh','product-45','Bảo hành 12 tháng chính hãng, bao xài đổi trả 15 ngày đầu.',241);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('OPPO A15 ',23,4,'Android 10','MediaTek Helio P35 8 nhân','3 GB','IPS LCD 6.52','HD+ (720 x 1600 Pixels)','Chính 13 MP & Phụ 2 MP, 2 MP, 8 MP','32 GB','4230 mAh','product-46','Bảo hành chính hãng 12 tháng. Bao xài đổi trả 15 ngày đầu.',151);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Oppo A12 - 3GB/32GB ',11,4,'Android 11','Đang cập nhật','3 GB','IPS LCD 6.22','HD+ (720 x 1520 Pixels)','Chính 13 MP & Phụ 2 MP, 5 MP','32 GB','4230 mAh','product-47','Chính hãng 12 tháng, bao xài - đổi trả trong 15 ngày đầu. Gói bảo hành mở rộng H-care, Vip-Care và H-Care Platinum để An tâm bảo hành - Sử dụng lâu dài',110);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Oppo A53 - 4GB/128GB ',23,4,'Android 11','Đang cập nhật','4 GB','IPS LCD 6.5','HD+ (720 x 1600 Pixels)','Chính 13 MP & Phụ 2 MP, 2 MP, 16 MP','128 GB','5000 mAh','product-48','Chính hãng 12 tháng, bao xài - đổi trả trong 15 ngày đầu, Gói bảo hành mở rộng H-care, Vip-Care và H-Care Platinum để An tâm bảo hành - Sử dụng lâu dài',171);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Oppo Reno4',7,4,'Android 11','Đang cập nhật','8 GB','AMOLED 6.4','Full HD+ (1080 x 2400 Pixels)','Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP, Chính 32 MP & Phụ cảm biến thông minh A.I','128 GB','4015 mAh','product-49','Chính hãng 12 tháng, bao xài - đổi trả trong 15 ngày đầu. Gói bảo hành mở rộng H-care, Vip-Care và H-Care Platinum để An tâm bảo hành - Sử dụng lâu dài',280);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Oppo Reno4 Pro',9,4,'Android 11','Đang cập nhật','8 GB','AMOLED 6.5','Full HD+ (1080 x 2400 Pixels)','Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP, 32 MP','256 GB','4000 mAh','product-50','- Chính hãng 12 tháng, bao xài - đổi trả trong 15 ngày đầu. Gói bảo hành mở rộng H-care, Vip-Care và H-Care Platinum để An tâm bảo hành - Sử dụng lâu dài',425);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme 8 Pro ',22,5,'Android 11','Snapdragon 720G 8 nhân','8 GB','Super AMOLED','Full HD+ (1080 x 2400 Pixels)','Chính 108 MP & Phụ 8 MP, 2 MP, 2 MP, 16 MP','128 GB','4500 mAh','product-51','Bảo hành chính hãng 12 tháng. Bao xài đổi trả trong 15 ngày đầu.',377);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme 8 ',10,5,'Android 11','MediaTek Helio G95','8 GB','Super AMOLED','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP, 16 MP','128 GB','5000 mAh','product-52','Bảo hành chính hãng 12 tháng. Bao xài đổi trả trong 15 ngày đầu.',316);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme C25 ',19,5,'Android 11','MediaTek Helio G70','4 GB','IPS LCD','HD+ (720 x 1600 Pixels)','Chính 48 MP & Phụ 2 MP, 2 MP, 8 MP','128 GB','6000 mAh','product-53','Bảo hành 12 tháng chính hãng',193);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme C20 ',11,5,'Android 10','MediaTek Helio G35 8 nhân','2 GB','LCD 6.5','HD+ (720 x 1600 Pixels)','8 MP, 5 MP','32 GB','5000 mAh','product-54','Bảo hành chính hãng 12 tháng. Bao xài đổi trả trong 15 ngày đầu.',106);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme C15 ',24,5,'Android 10','Snapdragon 460 8 nhân','4 GB','IPS LCD','HD+ (720 x 1600 Pixels)','Chính 13 & Phụ 8 MP, 2 MP, 2 MP, 8 MP','64 GB','6000 mAh','product-55','Bảo hành chính hãng 12 tháng. Bao xài đổi trả 15 ngày đầu.',164);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme C17 - 6GB/128GB ',10,5,'Android 10','Snapdragon 460 8 nhân','6 GB','IPS LCD 6.5','HD+ (720 x 1600 Pixels)','Chính 13 MP & Phụ 8 MP, 2 MP, 2 MP, 8 MP','128 GB','5000 mAh','product-56','Bảo hành chính hãng 12 tháng. Bao xài đổi trả 15 ngày đầu.',202);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme C12 - 3GB/32GB - Pin 6000 mAh',17,5,'Android 11','Đang cập nhật','3 GB','IPS LCD 6.52','HD+ (720 x 1600 Pixels)','Chính 13 MP & Phụ 2 MP, 2 MP, 5 MP','32 GB','6000 mAh','product-57','Bảo hành 12 tháng chính hãng. Bao xài đổi trả trong vòng 15 ngày đầu tiên',141);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme 7 ',20,5,'Android 10','MediaTek Helio G95 8 nhân','8 GB','IPS LCD','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP, 16 MP','128 GB','5000 mAh','product-58','Bảo hành 12 tháng chính hãng. Bao xài đổi trả trong vòng 15 ngày đầu tiên',216);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme 7 pro ',22,5,'Android 10','Snapdragon 720G 8 nhân','8 GB','Super AMOLED 6.4','Full HD+ (1080 x 2400 Pixels)','Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP, 32 MP','128 GB','4500 mAh','product-59','Bảo hành 12 tháng chính hãng. Bao xài đổi trả trong vòng 15 ngày đầu tiên',323);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme C11 - 2GB/32GB ',15,5,'Android 10','MediaTek Helio G35 8 nhân','2 GB','IPS LCD 6.5','HD+ (720 x 1560 Pixels)','Chính 13 MP & Phụ 2 MP, 5 MP','32 GB','5000 mAh','product-60','Bảo hành 12 tháng chính hãng. Bao xài đổi trả trong vòng 15 ngày đầu tiên',106);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme C11 - 2021',5,5,'Android 10','Mali-G52 MC2','2 GB','IPS LCD 6.5','HD+ (720 x 1560 Pixels)','Chính 13 MP & Phụ 2 MP, 5 MP','32 GB','5000 mAh','product-61','Bảo hành 12 tháng chính hãng. Bao xài đổi trả trong vòng 15 ngày đầu tiên',106);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Realme 7i ',23,5,'Android 10','Snapdragon 662 8 nhân','8 GB','IPS LCD 6.5','HD+ (720 x 1600 Pixels)','Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP, 16 MP','128 GB','5000 mAh','product-62','Bảo hành 12 tháng chính hãng. bao xài đổi trả trong vòng 15 ngày đầu.',233);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Blackberry Key One - Black ',15,6,'Android 11','Đang cập nhật','4 GB','IPS LCD 4.5','1080 x 1620 Pixels','12 MP, 8 MP','64 GB','3505 mAh','product-63','Bảo hành chính hãng 12 tháng. Bao xài đổi trả trong 15 ngày đầu.',186);
-insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) values ('Blackberry Key One - Silver ',25,6,'Android 11','Đang cập nhật','3 GB','IPS LCD 4.5','1080 x 1620 Pixels','12 MP, 8 MP','32 GB','3505 mAh','product-64','Chính hãng 12 tháng',173);
+
+-- Category 03 HP
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP Gaming VICTUS 16',6,3,'Win 11','R7 5800H','8 GB','16.1 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','6 cell','Laptop HP Gaming VICTUS 16','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1200);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP 340s G7',6,3,'Win 10','i3-1005G1','4 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','256GB SSD','3 cell','Laptop HP 340s G7','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',500);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP EliteBook X360 1040 G8',6,3,'Win 10','i7-1165G7','16 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','3 cell','Laptop HP EliteBook X360 1040 G8','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2100);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP ZBook Firefly 14 G8',6,3,'Win 10',' i5-1135G7','16 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','6 cell','Laptop HP ZBook Firefly 14 G8','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1500);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP Envy 13',6,3,'Win 10','i7-1165G7','16 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','6 cell','Laptop HP Envy 13','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1500);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP Pavilion 15',6,3,'Win 11','i7-1260P','16 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','3 cell','Laptop HP Pavilion 15','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1200);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP Pavilion x360 14',6,3,'Win 11','i7-1165G7','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','3 cell','Laptop HP Pavilion x360 14','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1150);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP 14s',6,3,'Win 11','i7-1165G7','8 GB','16.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','3 cell','Laptop HP 14s','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',900);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP 15s',6,3,'Win 11','i5-1235U','8 GB','16.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','3 cell','Laptop HP 15s','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',900);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP 240 G8',6,3,'Win 11','i5-1135G7','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','3 cell','Laptop HP 240 G8','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',750);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP 340s',6,3,'Win 11','i5-1035G1','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD','3 cell','Laptop HP 340s','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',750);
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop HP Probook 450 G8',6,3,'Win 10','i5-1115G4','4 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','256GB SSD','3 cell','Laptop HP Probook 450 G8','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',550);
+
+
+-- Category 04 Asus
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus TUF Gaming FX506LH',6,4,'Win 11','i5-10300H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'2 cell','Laptop Asus TUF Gaming FX506LH','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1000);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus Vivobook 15 X1502ZA',6,4,'Win 11','i5-1240P','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Asus Vivobook 15 X1502ZA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',850);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus ZenBook UX425EA',6,4,'Win 11','i5-1240P','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus ZenBook UX425EA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1100);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus Gaming ROG Flow Z13 GZ301Z',6,4,'Win 11','i7-12700H','16 GB','13.4 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus Gaming ROG Flow Z13 GZ301Z','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2500);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus Zenbook 14X OLED Space Edition UX5401ZAS',6,4,'Win 11','i7-12700H','16 GB','14 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','1TB SSD',
+'3 cell','Laptop Asus Zenbook 14X OLED Space Edition UX5401ZAS','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2000);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus ZenBook Duo UX482EA',6,4,'Win 11','i5-1135G7','8 GB','14 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Asus ZenBook Duo UX482EA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1600);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus ZenBook UX482EA',6,4,'Win 11','i5-1135G7','8 GB','14 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus ZenBook UX482EA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1500);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus TUF Gaming FA707RC',6,4,'Win 11','R7-6800H','8 GB','17.3 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus TUF Gaming FA707RC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1400);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus VivoBook Pro 15 OLED K3500P',6,4,'Win 11','i5-11300H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Asus VivoBook Pro 15 OLED K3500P','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1400);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus ZenBook UX325EA',6,4,'Win 11',' i7-1165G7','16 GB','13.3 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus ZenBook UX325EA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1350);
+
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus VivoBook Pro 14x OLED M7400QC',6,4,'Win 11','R5-5600H','16 GB','14 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus VivoBook Pro 14x OLED M7400QC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1400);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus ZenBook UX425E',6,4,'Win 11','i7-1165G7','16 GB','14 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus ZenBook UX425E','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1400);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus ExpertBook B9400CEA',6,4,'Win 11','i5-1135G7','8 GB','14 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus ExpertBook B9400CEA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1350);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus VivoBook Pro 15 OLED M3500QC',6,4,'Win 11','R5-5600H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Asus VivoBook Pro 15 OLED M3500QC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1350);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus TUF Gaming FX517ZC',6,4,'Win 11','i5-12450H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus TUF Gaming FX517ZC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1250);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus Rog Zephyrus Gaming G14 GA401QH',6,4,'Win 11',' R7-5800HS','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus Rog Zephyrus Gaming G14 GA401QH','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1250);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus Zenbook 14 OLED UX3402ZA',6,4,'Win 11','i5-1240P','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus Zenbook 14 OLED UX3402ZA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1200);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus ZenBook Flip UX363EA',6,4,'Win 11','i5-1135G7','8 GB','13.3 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Asus ZenBook Flip UX363EA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1200);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus ZenBook 14X OLED UM5401QA',6,4,'Win 11','R5-5600H','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Asus ZenBook 14X OLED UM5401QA','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1150);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus TUF Gaming FX706HC',6,4,'Win 11','i5-11400H','8 GB','17.3 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Asus TUF Gaming FX706HC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1100);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus TUF Gaming FX506HC',6,4,'Win 11','i5-11400H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Asus TUF Gaming FX506HC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1050);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Asus TUF Gaming FX506HCB',6,4,'Win 11','i5-11400H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Asus TUF Gaming FX506HCB','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1050);
+
+
+
+-- Category 05 : Levono
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo IdeaPad Gaming 3 15IHU6',6,5,'Win 11','i5-11300H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Lenovo IdeaPad Gaming 3 15IHU6','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',850);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo Ideapad 5 15ITL05',6,5,'Win 11','i5-1135G7','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Lenovo Ideapad 5 15ITL05','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',750);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo Ideapad 3 15ITL6',6,5,'Win 11','i5-1135G7','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Lenovo Ideapad 3 15ITL6','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',750);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo Gaming Legion 5 15ITH6',6,5,'Win 11','i7-11800H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'6 cell','Laptop Lenovo Gaming Legion 5 15ITH6','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1650);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo ThinkBook 14p G2 ACH',6,5,'Win 11','R5-5600H','16 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'6 cell','Laptop Lenovo ThinkBook 14p G2 ACH','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1000);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo ThinkPad P15s G2',6,5,'Win 11','i7-1165G7','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Lenovo ThinkPad P15s G2','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2000);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo ThinkPad P14s G2',6,5,'Win 11','i5-1135G7','16 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop Lenovo ThinkPad P14s G2','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1750);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo Yoga Duet 7 13ITL6',6,5,'Win 10','i7-1165G7','16 GB','13.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','1TB SSD',
+'6 cell','Laptop Lenovo Yoga Duet 7 13ITL6','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1700);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo Gaming Legion 5 15ACH6',6,5,'Win 11','R7-5800H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'6 cell','Laptop Lenovo Gaming Legion 5 15ACH6','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1450);
+
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo Yoga Slim 7 Carbon 13ITL5',6,5,'Win 11','i5-1135G7','16 GB','13.3 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'6 cell','Laptop Lenovo Yoga Slim 7 Carbon 13ITL5','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1450);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo Ideapad 5 Pro 14ITL6',6,5,'Win 10','i7 -165G7','16 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'6 cell','Laptop Lenovo Ideapad 5 Pro 14ITL6','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1350);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo IdeaPad 5 Pro 16IHU6',6,5,'Win 11','i5-11300H','16 GB','16.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'6 cell','Laptop Lenovo IdeaPad 5 Pro 16IHU6','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1350);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop Lenovo Yoga Slim 7 14ITL05',6,5,'Win 10',' i7-1165G7','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop Lenovo Yoga Slim 7 14ITL05','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1300);
+
+
+-- Category 06 : MSI
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Modern 14 B5M',6,6,'Win 11','R5-5500U','8 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop MSI Modern 14 B5M','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',700);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming GF63 Thin 10SC',6,6,'Win 10','i7-10750H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop MSI Gaming GF63 Thin 10SC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',950);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming GE66 Raider 11UG',6,6,'Win 10','i7-11800H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','2TB SSD',
+'4 cell','Laptop MSI Gaming GE66 Raider 11UG','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2950);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Creator Z16P B12UGST',6,6,'Win 11','i7-12700H','32 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','2TB SSD',
+'4 cell','Laptop MSI Creator Z16P B12UGST','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',4000);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming GE66 Raider 11UH',6,6,'Win 10','i7-11800H','32 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','2TB SSD',
+'4 cell','Laptop MSI Gaming GE66 Raider 11UH','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',3850);
+
 
 create table if not exists reviews
 (

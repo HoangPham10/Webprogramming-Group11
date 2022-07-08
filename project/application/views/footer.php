@@ -57,18 +57,18 @@
 
 <script type="text/javascript">
     let isBonk = 1;
-    let bonk = () => {
-        const img = document.getElementById("cheems");
-        if (isBonk === 1) {
-            const audio = new Audio("<?php echo BASE_PATH . '/public/images/bonk (1).mp3' ?>");
-            audio.play();
-            img.src = "<?php echo BASE_PATH . '/public/images/bonk.jpg' ?>";
-            isBonk = 0;
-        } else {
-            img.src = "<?php echo BASE_PATH . '/public/images/logo_cheems.png' ?>";
-            isBonk = 1;
-        }
-    }
+    // let bonk = () => {
+    //     const img = document.getElementById("cheems");
+    //     if (isBonk === 1) {
+    //         const audio = new Audio("<?php echo BASE_PATH . '/public/images/bonk (1).mp3' ?>");
+    //         audio.play();
+    //         img.src = "<?php echo BASE_PATH . '/public/images/bonk.jpg' ?>";
+    //         isBonk = 0;
+    //     } else {
+    //         img.src = "<?php echo BASE_PATH . '/public/images/logo_cheems.png' ?>";
+    //         isBonk = 1;
+    //     }
+    // }
 </script>
 
 <div class="footer">
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="footer-col-2">
-                <img id="cheems" style="border-radius: 50%; object-fit: cover;" onclick="bonk()" src="<?php echo BASE_PATH . '/public/icons/logo.jpg' ?>">
+                <img id="cheems" style="border-radius: 50%; object-fit: cover;" src="<?php echo BASE_PATH . '/public/icons/logo.jpg' ?>">
                 <p>Do Minh Welcomes You To The Shop</p>
             </div>
             <div class="footer-col-3">
