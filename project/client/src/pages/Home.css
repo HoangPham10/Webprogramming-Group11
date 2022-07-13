@@ -1,0 +1,42 @@
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../assets/icons/dmitry-chernyshov.jpg');
+    background-attachment: fixed;
+    margin-bottom: 80px;
+}
+
+.hero-image_M1_Pro{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../assets/attachmentBackground/MacOSM1.jpg');
+    background-attachment: fixed;
+    height: 35rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+.brands {
+    margin: 70px 0;
+}
+
+.logo-container {
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.offer {
+    background-image: url('../assets/icons/dmitry-chernyshov.jpg');
+    margin-bottom: 80px;
+    padding: 30px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.brand{
+    object-fit: contain !important;
+}
