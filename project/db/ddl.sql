@@ -18,8 +18,8 @@ create table if not exists users
     role       varchar(20) default 'user',
     address    varchar(50),
     phone      varchar(20),
-    created_at datetime    default current_timestamp,
-    updated_at datetime on update current_timestamp
+    createdAt datetime    default current_timestamp,
+    updatedAt datetime on update current_timestamp
 );
 insert into users(username, password, name, email, role, address, phone)
 values ('dangvh', '$2y$10$2jWElpzfcMw9mi6p.uZr5e7IA1Mjo7yTNYJEYbzgexPssafiY9U0S', 'Vu Hai Dang', 'dangvh@gmail.com',
@@ -41,8 +41,8 @@ create table if not exists categories
 (
     id         int primary key auto_increment,
     brand      varchar(50),
-    created_at datetime default current_timestamp,
-    updated_at datetime on update current_timestamp
+    createdAt datetime default current_timestamp,
+    updatedAt datetime on update current_timestamp
 );
 
 insert into categories(brand)
@@ -71,8 +71,8 @@ create table if not exists products
     image       text,
     description text,
     price       double             not null,
-    created_at  datetime default current_timestamp,
-    updated_at  datetime on update current_timestamp,
+    createdAt  datetime default current_timestamp,
+    updatedAt  datetime on update current_timestamp,
     foreign key (category_id) references categories (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -312,15 +312,71 @@ insert into products(name, quantity, category_id, os, chipset, ram, display, res
 values ('Laptop MSI Gaming GE66 Raider 11UH',6,6,'Win 10','i7-11800H','32 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','2TB SSD',
 '4 cell','Laptop MSI Gaming GE66 Raider 11UH','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',3850);
 
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming GS66 Stealth 11UG',6,6,'Win 10','i7-11800H','32 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','2TB SSD',
+'4 cell','Laptop MSI Gaming GS66 Stealth 11UG','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',3200);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Creator Z16 A12UET',6,6,'Win 10','i7-12700H','16 GB','16.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','2TB SSD',
+'4 cell','Laptop MSI Creator Z16 A12UET','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',3000);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming Vector GP66 12UGS',6,6,'Win 10','i7-12700H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','2TB SSD',
+'4 cell','Laptop MSI Gaming Vector GP66 12UGS','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2750);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming Leopard GP76 11UG',6,6,'Win 10','i7-11800H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','2TB SSD',
+'4 cell','Laptop MSI Gaming Leopard GP76 11UG','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2600);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming Stealth 15M A11UEK',6,6,'Win 10','i7-11375H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop MSI Gaming Stealth 15M A11UEK','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',2050);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Creator M16 A12UC',6,6,'Win 11','i7-12700H','16 GB','16.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop MSI Creator M16 A12UC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1700);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming Pulse GL66 11UDK',6,6,'Win 10','i7-11800H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop MSI Gaming Pulse GL66 11UDK','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1700);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Katana GF76 11UE',6,6,'Win 11','i7-11800H','16 GB','17.3 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop MSI Katana GF76 11UE','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1550);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming GF65 10UE',6,6,'Win 11','i7-10750H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop MSI Gaming GF65 10UE','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1450);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming GF65 Thin 10UE',6,6,'Win 11','i5-10500H','16 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'4 cell','Laptop MSI Gaming GF65 Thin 10UE','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1350);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Katana Gaming GF66 11UC',6,6,'Win 11','i7-11800H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop MSI Katana Gaming GF66 11UC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1300);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Prestige 14 A11SC',6,6,'Win 10','i7-1195G7','16 GB','14.0 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop MSI Prestige 14 A11SC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1250);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming GF63 Thin 11UD',6,6,'Win 11','i7-11800H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop MSI Gaming GF63 Thin 11UD','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1200);
+
+insert into products(name, quantity, category_id, os, chipset, ram, display, resolution,             camera, memory, pin, image, description, price) 
+values ('Laptop MSI Gaming GF63 Thin 11UC',6,6,'Win 10','i7-11400H','8 GB','15.6 inch FHD','1920 x 1080 Pixels','1 camera 12 MP','512GB SSD',
+'3 cell','Laptop MSI Gaming GF63 Thin 11UC','Bảo hành 12 tháng chính hãng, bao xài đổi trả trong 15 ngày.',1000);
 
 create table if not exists reviews
 (
     id         int primary key auto_increment,
-    user_id    int not null,
+    user_id    varchar(50) not null,
     product_id int not null,
     content    text,
     rating     int,
-    created_at datetime default current_timestamp,
+    createdAt datetime default current_timestamp,
+    updatedAt  datetime on update current_timestamp
     unique (user_id, product_id)
 );
 
@@ -355,8 +411,8 @@ create table if not exists shipments
     method      text   not null,
     fee         double not null,
     description text,
-    created_at  datetime default current_timestamp,
-    updated_at  datetime on update current_timestamp
+    createdAt  datetime default current_timestamp,
+    updatedAt  datetime on update current_timestamp
 );
 insert into shipments(method, fee, description)
 values ('By bike', '5', 'Delivery by bike'),
@@ -367,8 +423,8 @@ create table if not exists payments
     id          int primary key auto_increment,
     method      text not null,
     description text,
-    created_at  datetime default current_timestamp,
-    updated_at  datetime on update current_timestamp
+    createdAt  datetime default current_timestamp,
+    updatedAt  datetime on update current_timestamp
 );
 insert into payments(method, description)
 values ('COD', 'Cash on delivery');
