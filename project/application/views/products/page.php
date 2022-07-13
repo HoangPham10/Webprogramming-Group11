@@ -1,7 +1,7 @@
 <style>
     .hero-image {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-            url(<?php echo BASE_PATH . '/public/images/Banner_products.jpg' ?>);
+            url(<?php echo BASE_PATH . '/public/icons/dmitry-chernyshov.jpg' ?>);
         margin-bottom: 80px;
     }
 
