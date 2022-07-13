@@ -1,0 +1,79 @@
+.row {
+    justify-content: start;
+}
+
+.row h2 {
+    text-transform: uppercase !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    transition: all .3s ease 0s !important;
+}
+
+.cart-page {
+    margin: 80px auto;
+    min-height: 50%;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: #1e1e1eec;
+    font-weight: normal;
+}
+
+td {
+    padding: 10px 5px;
+}
+
+td a {
+    color: #ff523b;
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+button {
+    background: #f3f3f3;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff523b;
+    color: #fff;
+}
+
+
+.removebutton {
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px !important;
+    border-radius: 30px !important;
+    border: 0px;
+    cursor: pointer;
+    transition: background 0.5;
+  }
+  
+.removebutton:hover {
+    background: #563434;
+}
+
+  
