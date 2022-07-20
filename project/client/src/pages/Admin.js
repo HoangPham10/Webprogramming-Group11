@@ -9,7 +9,7 @@ export default function Admin() {
     const [selectors, setSelectors] = useState('')
     console.log(selectors)
   return (
-    <div style={{minHeight: '500px'}}>
+    <div style={{marginTop: '60px' ,minHeight: '500px'}}>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 200,  }}>
                 <InputLabel id="demo-simple-select-standard-label">Choose an action</InputLabel>
                 <Select
