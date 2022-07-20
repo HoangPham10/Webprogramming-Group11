@@ -45,7 +45,7 @@ export default function Home() {
         <div className="hero-image" id="bannerHomePage">
             <div className="hero-text">
                 <h4>Welcome to</h4>
-                <h2>Laptop Do Minh</h2>
+                <h2>AICT Store</h2>
                 <a href="#feature-section" className="button">Explore now</a>
             </div>
         </div>
@@ -88,7 +88,7 @@ export default function Home() {
         {/* <!-- Offer --> */}
         <div className="hero-image_M1_Pro" style={{ marginBottom: '70px'}}>
             <div className="hero-text">
-                <h4 style={{color: "#fff"}}>Exclusively Available on Do Minh Store</h4>
+                <h4 style={{color: "#fff"}}>Exclusively Available on Icy Tea Store</h4>
                 <h2 style={{margin: "20px 0"}}>Macbook M1 Pro</h2>
                 <p style={{color: "#fff"}}>
                     M1 chip - The first gen chip made by MacOS.
