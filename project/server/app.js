@@ -41,7 +41,7 @@ sequelize
   //.sync({ force: true })
   .sync()
   .then(resizeBy => {
-    app.listen(5000);
+    app.listen(8000);
   })
   .catch(err => {
     console.log(err);
