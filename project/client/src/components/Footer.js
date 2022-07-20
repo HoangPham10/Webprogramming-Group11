@@ -19,7 +19,7 @@ export default function Footer() {
                 </div>
                 <div className="footer-col-2">
                     <img src={logo} style={{width: '4rem', height: '4rem', borderRadius: '50%', objectFit:'cover'}}/>
-                    <p>Do Minh Welcomes You To The Shop</p>
+                    <p>Welcomes You To The Shop</p>
                 </div>
                 <div className="footer-col-3">
                     <h3>Follow us</h3>
