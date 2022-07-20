@@ -48,7 +48,7 @@ export default function Update() {
         <div className="container">
             <div className="row">
                 <div className="col-2">
-                    <img style={{width: "90%",opacity: "0.3",height: '100%'}} src={macOs} />
+                    <img className='computerAppleImg' style={{width: "90%",opacity: "0.3",height: '100%'}} src={macOs} />
                 </div>
                 <div className="col-2">
                     <div className="form-container" style={{height: "550px"}}>

@@ -43,7 +43,7 @@ export default function Register() {
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <img style={{width: "90%",opacity: "0.3",height: '100%'}} src={macOs} />
+                    <img className='computerAppleImg' style={{width: "90%",opacity: "0.3",height: '100%'}} src={macOs} />
                 </div>
                 <div class="col-2">
                     <div class="form-container" style={{height: "570px"}}>
