@@ -71,6 +71,14 @@ export const createTransaction = async(token, data) => {
     })
 }
 
+export const transactionMethod = async(token, data) => {
+    return await axios.post('/transaction/method', data,{
+        headers: {
+            'Authorization': `bearer ${token}`,
+        }
+    })
+}
+
 
 export const postReview = async(token, data) => {
     return await axios.post('/review', data,{

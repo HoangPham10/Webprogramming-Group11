@@ -5,8 +5,11 @@ import { getShipments } from '../apis/shipmentAPIs';
 import { getPayments } from '../apis/paymentAPIs';
 import {useNavigate, Link} from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { createTransaction } from '../apis/userAPIs';
+import { createTransaction, transactionMethod } from '../apis/userAPIs';
 import { Types } from '../redux/Type';
+import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
+
 
 export default function Order() {
     const {username, address, phone, cart, token} = useSelector(state => state.user);
@@ -52,14 +55,10 @@ export default function Order() {
             payment_id: paymentMethod,
             shipment_id: shipmentMethod
         }
-        const response = await createTransaction(token, payload);
-        if(response.data.msg){
-            alert(response.data.msg)
-        }
-        if(response.status === 200){
-            dispatch({type: Types.ADD_TO_CART, payload: []})
-            navigate('/orders/thankyou');
-        }
+        localStorage.setItem('transaction', JSON.stringify(payload))
+
+        let response = await transactionMethod(token, payload)
+        window.location.href = response.data.redirect_url;
     }
     
   return (
@@ -161,6 +160,36 @@ export default function Order() {
 
 
 export const OrderThankYou = () => {
+    const [searchParams] = useSearchParams();
+    const paymentId = searchParams.get('paymentId')
+    const paypalToken = searchParams.get('token')
+    const PayerID =  searchParams.get('PayerID')
+    const payload = JSON.parse(localStorage.getItem('transaction'))
+    const {token} = useSelector(state => state.user)
+    useEffect(() =>{
+      const completeTransaction = async() => {
+        if (paymentId && paypalToken && PayerID && payload){
+            const responsePaypal = await axios.post('/transaction/success', {
+                payload: payload,
+                PayerID,
+                paymentId
+            },{
+                headers: {
+                    'Authorization': `bearer ${token}`,
+                }}
+            )
+            if (responsePaypal.status === 200){
+                const response = await createTransaction(token, payload)
+                if (response.status === 200){
+                    localStorage.removeItem('transaction')
+                }
+            }
+            
+        }
+      }
+      completeTransaction();
+    },[payload])
+    
     return( 
         <div className="small-container thank-you-page">
             <div className="row">
