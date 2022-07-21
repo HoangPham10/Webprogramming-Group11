@@ -3,8 +3,8 @@ const Sequelize = require('sequelize');
 const dbConfig = {
     host: 'localhost',
     username: 'root',
-    password: '',
-    database: 'webProgramming',
+    password: 'hoang1901',
+    database: 'web_programming',
     dialect: 'mysql',
     pool:{
         max: 5,

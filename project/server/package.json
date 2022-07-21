@@ -19,6 +19,7 @@
     "express-fileupload": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
+    "paypal-rest-sdk": "^1.8.1",
     "sequelize": "^6.21.2"
   },
   "devDependencies": {

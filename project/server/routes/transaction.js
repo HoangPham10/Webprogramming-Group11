@@ -4,6 +4,8 @@ const auth = require('../middleware/auth')
 
 const router = express.Router();
 
+router.post('/method',auth, transactionController.PaymentMethod);
+router.post('/success',auth, transactionController.transactionSuccess);
 router.post('/',auth, transactionController.createTransactions);
 router.post('/history',auth, transactionController.getOrderHistory);
 router.get('/:id', transactionController.getTransactions);
