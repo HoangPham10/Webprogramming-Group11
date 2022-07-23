@@ -28,7 +28,6 @@ function App() {
   const dispatch = useDispatch();
 
   const {isLogged, token, role} = useSelector(state => state.user);
-  console.log('role', role)
   useEffect(() =>{
     const getRefreshToken = async() => {
       const response = await refresh_token();

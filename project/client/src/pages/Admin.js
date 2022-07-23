@@ -7,7 +7,6 @@ import ProductManagement from '../components/ProductManagement';
 
 export default function Admin() {
     const [selectors, setSelectors] = useState('')
-    console.log(selectors)
   return (
     <div style={{marginTop: '60px' ,minHeight: '500px'}}>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 200,  }}>

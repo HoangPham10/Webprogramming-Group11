@@ -9,6 +9,7 @@ import CartIcon from "../assets/icons/cart.png"
 import MenuIcon from "../assets/icons/menu.png"
 import { Types } from '../redux/Type';
 import { logoutAPI } from '../apis/userAPIs';
+import { googleLogout } from '@react-oauth/google';
 
 
 
@@ -20,6 +21,7 @@ export default function Header() {
 
     const logOut = async() => {
         await logoutAPI();
+        googleLogout();
         dispatch({type: Types.LOGOUT})
     }
     // const searchWrapper = document.querySelector(".search-input");

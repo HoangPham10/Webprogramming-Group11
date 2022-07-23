@@ -56,6 +56,7 @@ app.use('/payment',require('./routes/payment'));
 app.use('/transaction',require('./routes/transaction'));
 app.use('/review',require('./routes/reviews'));
 app.use('/api', require('./routes/upload'))
+app.use('/api/auth', require('./routes/auth'))
 
 
 
@@ -65,7 +66,7 @@ sequelize
   //.sync({ force: true })
   .sync()
   .then(resizeBy => {
-    app.listen(8000);
+    app.listen(3000);
   })
   .catch(err => {
     console.log(err);

@@ -6,6 +6,8 @@ import { loginAPI } from '../apis/userAPIs'
 import { useDispatch } from 'react-redux'
 import { Types } from '../redux/Type'
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from '@react-oauth/google';
+import axios from 'axios'
 
 export default function Login() {
     const [account, setAccount] = useState({
@@ -31,6 +33,27 @@ export default function Login() {
         }
     }
 
+    const onSuccess = async (res) => {
+        try {
+            const result = await axios.post("/api/auth", {
+            token: res?.credential,
+          });
+          debugger
+            if(result.data && result.data.msg ){
+                alert(result.data.msg)
+            }else{
+                dispatch({type: Types.LOGIN_SUCCESSFULL, payload: result.data});
+                navigate('/')
+            }
+        } catch (err) {
+          console.log(err);
+        }
+    };
+
+    const onError = (err) => {
+        console.error('Google sign in failed.', err);
+    };
+
   return (
     
     <div className="login-page">
@@ -40,7 +63,7 @@ export default function Login() {
                     <img className='computerAppleImg' style={{width: "90%",opacity: "0.3",height: '100%'}} src={macOs}  />
                 </div>
                 <div className="col-2">
-                    <div className="form-container" style={{height: "350px"}}>
+                    <div className="form-container" style={{height: "400px"}}>
                         <div className="form-button">
                             <span id="loginButton">Login</span>
                             <span><Link to="/users/register" id="registerButtonLogin">Register</Link></span>
@@ -56,6 +79,13 @@ export default function Login() {
                             </div>
                             <div className="form-row">
                                 <button className='button' onClick={() => {onSubmitHandler()}}>Login</button>
+                            </div>
+                            <div>
+                                <GoogleLogin
+                                    clientId={`${process.env.REACT_APP_CLIENT_ID}`}
+                                    onSuccess={onSuccess}
+                                    onFailure={onError}
+                                />
                             </div>
                             <div className="form-row" style={{marginTop: "20px"}}>
                                 <Link to="/">Back to Home Page</Link>

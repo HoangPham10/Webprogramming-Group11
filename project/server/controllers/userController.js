@@ -41,12 +41,10 @@ exports.Register =  async(req, res, next) =>  {
 exports.refreshToken = async(req, res, next) => {
     try{
         const rf_token = req.cookies.refresh_token;
-        console.log(rf_token)
         if(!rf_token){
             return res.json({msg:"Please Login or Register"})
         }
         jsonWebToken.verify(rf_token, process.env.REFRESH_TOKEN_SECRET, (err, username) => {
-            console.log('username', username)
             if (err) return res.json({msg:"Please Login or Register"});
             const accesstoken = jwt.createAccessToken({username: username})
             res.json({accesstoken})
